@@ -15,7 +15,7 @@ const App = ({ userId, currentUser }) => {
       { userId ? (
         <div>
           <pre>{JSON.stringify(currentUser, null, 2)}</pre>
-          <button onClick={currentUser.refetch}>Refetch!</button>
+          <button onClick={() => currentUser.refetch()}>Refetch!</button>
         </div>
       ) : 'Please log in!' }
     </div>
