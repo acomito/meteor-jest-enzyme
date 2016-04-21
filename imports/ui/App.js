@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-apollo';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Accounts } from 'meteor/std:accounts-ui';
+
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_ONLY'
+});
 
 const App = ({ userId, currentUser }) => {
   return (
     <div>
-      <LogInButtons />
+      <Accounts.ui.LoginForm />
       { userId ? (
         <div>
           <pre>{JSON.stringify(currentUser, null, 2)}</pre>
