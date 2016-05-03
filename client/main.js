@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import React from 'react';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
-import { Provider } from 'react-apollo';
+import { ApolloProvider } from 'react-apollo';
 import { Accounts } from 'meteor/accounts-base';
 
 import App from '/imports/ui/App';
@@ -33,7 +33,7 @@ const client = new ApolloClient({
 });
 
 Meteor.startup(() => {
-  render(<Provider client={client}>
+  render(<ApolloProvider client={client}>
     <App />
-  </Provider>, document.getElementById('app'));
+  </ApolloProvider>, document.getElementById('app'));
 });
