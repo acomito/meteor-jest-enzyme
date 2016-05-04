@@ -5,7 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "apollo-client": "^0.2.3",
+    "apollo-client": "^0.3.0",
     "express": "^4.13.4",
     "graphql": "^0.5.0",
     "graphql-tools": "^0.3.8",

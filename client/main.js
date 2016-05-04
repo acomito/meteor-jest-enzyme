@@ -1,9 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import React from 'react';
+import { Accounts } from 'meteor/accounts-base';
+
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-import { Accounts } from 'meteor/accounts-base';
+
+import { registerGqlTag } from 'apollo-client/gql';
+registerGqlTag();
 
 import App from '/imports/ui/App';
 

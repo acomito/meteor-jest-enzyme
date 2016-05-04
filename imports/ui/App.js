@@ -28,7 +28,7 @@ const AppWithData = connect({
     if (ownProps.userId) {
       return {
         currentUser: {
-          query: `
+          query: gql`
             query getUserData ($id: String!) {
               user(id: $id) {
                 emails {
