@@ -6,7 +6,7 @@ import { Accounts } from 'meteor/accounts-base';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 
-import { registerGqlTag } from 'apollo-client/lib/src/gql';
+import { registerGqlTag } from 'apollo-client/gql';
 registerGqlTag();
 
 import App from '/imports/ui/App';
