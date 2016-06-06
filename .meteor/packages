@@ -21,3 +21,4 @@ std:accounts-ui
 std:accounts-basic
 accounts-password
 react-meteor-data
+apollo
