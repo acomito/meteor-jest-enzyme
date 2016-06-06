@@ -8,6 +8,7 @@ type Email {
 
 type User {
   emails: [Email]
+  username: String
   randomString: String
 }
 
