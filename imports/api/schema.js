@@ -8,6 +8,7 @@ type Email {
 
 type User {
   emails: [Email]
+  username: String
   randomString: String
 }
 
@@ -22,10 +23,10 @@ schema {
 
 export const resolvers = {
   Query: {
-    user(root, args, context) {
+    async user(root, args, context) {
       // Only return the current user, for security
-      if (context.user._id === args.id) {
-        return context.user;
+      if (context.userId === args.id) {
+        return await Meteor.users.findOne(context.userId);
       }
     },
   },

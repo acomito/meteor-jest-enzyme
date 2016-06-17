@@ -11,4 +11,5 @@ meteor
 
 ### Learn more
 
-Learn more [in the docs](http://docs.apollostack.com/)!
+- [`apollo` package docs](https://github.com/apollostack/meteor-integration/)
+- [Apollo Stack docs](http://docs.apollostack.com/)
