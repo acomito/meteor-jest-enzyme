@@ -1,6 +1,15 @@
-# meteor starter kit
+# meteor starter kit V0.1.5
 
-A simple kit to start experimenting with Apollo and Meteor.
+A simple kit to start experimenting with Apollo, Meteor and React.
+
+### Includes: #
+- Apollo server
+- Apollo client
+- Express
+- React
+- Accounts UI, Basic & password
+* check `package.json` for specific versions
+
 
 ### Running it
 
