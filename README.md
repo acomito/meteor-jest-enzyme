@@ -20,19 +20,19 @@ meteor
 ```
 
 ### Folder structure
-.
-├── client                  # Client files
-│   ├── main.css            # Styles
-│   ├── main.html           # First loaded view pulling from imports
-│   └── main.js             # Imports all required files - React render
-├── imports                 # A client/server folder
-│   ├── api                 #
-│   |  └── schema.js        # Schema & query definitions
-│   └── ui                  #
-│      └── App.js           # UI React rendering
-├── server                  # Server files
-│   └── server.js           # Main server file initiating Apollo server
-└── package.json            # node dependencies
+    .
+    ├── client                  # Client files
+    │   ├── main.css            # Styles
+    │   ├── main.html           # First loaded view pulling from imports
+    │   └── main.js             # Imports all required files - React render
+    ├── imports                 # A client/server folder
+    │   ├── api                 #
+    │   |  └── schema.js        # Schema & query definitions
+    │   └── ui                  #
+    │      └── App.js           # UI React rendering
+    ├── server                  # Server files
+    │   └── server.js           # Main server file initiating Apollo server
+    └── package.json            # node dependencies
 
 
 ### Learn more
