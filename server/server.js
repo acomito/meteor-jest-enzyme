@@ -7,7 +7,4 @@ createApolloServer({
     pretty: true,
     schema,
     resolvers,
-    formatError(e) {
-      throw e;
-    }
 });
