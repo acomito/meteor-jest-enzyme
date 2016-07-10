@@ -3,6 +3,7 @@ import { connect } from 'react-apollo';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Accounts } from 'meteor/std:accounts-ui';
+import gql from 'graphql-tag';
 
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY'

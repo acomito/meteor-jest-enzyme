@@ -6,9 +6,6 @@ import ApolloClient from 'apollo-client';
 import { meteorClientConfig } from 'meteor/apollo';
 import { ApolloProvider } from 'react-apollo';
 
-import { registerGqlTag } from 'apollo-client/gql';
-registerGqlTag();
-
 import App from '/imports/ui/App';
 
 const client = new ApolloClient(meteorClientConfig());
