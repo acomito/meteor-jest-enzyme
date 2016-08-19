@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-apollo';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Accounts } from 'meteor/std:accounts-ui';
+import { LoginButtons } from 'meteor/okgrow:accounts-ui-react';
 import gql from 'graphql-tag';
 
 Accounts.ui.config({
@@ -12,7 +12,7 @@ Accounts.ui.config({
 const App = ({ userId, currentUser }) => {
   return (
     <div>
-      <Accounts.ui.LoginForm />
+      <LoginButtons visible="true" />
       { userId ? (
         <div>
           <pre>{JSON.stringify(currentUser, null, 2)}</pre>
