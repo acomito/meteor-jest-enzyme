@@ -57,7 +57,7 @@ mongo-id@1.0.5
 npm-bcrypt@0.8.7
 npm-mongo@1.4.44_1
 observe-sequence@1.0.12
-okgrow:accounts-ui-react@0.6.2
+okgrow:accounts-ui-react@0.7.1
 ordered-dict@1.0.8
 promise@0.7.2_1
 random@1.0.10
