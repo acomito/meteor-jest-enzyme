@@ -1,6 +1,6 @@
 import { Random } from 'meteor/random';
 
-export const schema = [`
+export const typeDefs = [`
 type Email {
   address: String
   verified: Boolean

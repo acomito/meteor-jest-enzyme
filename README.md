@@ -39,3 +39,7 @@ meteor
 
 - [`apollo` package docs](https://github.com/apollostack/meteor-integration/)
 - [Apollo Stack docs](http://docs.apollostack.com/)
+
+## No Auth for Graphiql
+
+Note that although Graphiql is enabled at [/graphiql](http://localhost:3000/graphiql), it is not authenticated by Meteor, so for example the query on `user` used by the app will not work in Graphiql. You can [help us improve this](https://github.com/apollostack/meteor-integration/issues/29), or you can relax the auth check in the resolver if you want to play with it (not production-safe!).
