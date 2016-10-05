@@ -5,8 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "apollo-client": "^0.4.13",
-    "apollo-server": "^0.2.8",
+    "apollo-client": "^0.4.20",
+    "apollo-server": "^0.3.2",
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
