@@ -361,10 +361,6 @@ encoding@^0.1.11:
   dependencies:
     iconv-lite "~0.4.13"
 
-es6-shim@^0.35.3:
-  version "0.35.3"
-  resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.3.tgz#9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26"
-
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
@@ -448,27 +444,25 @@ graphql-anywhere@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-2.1.0.tgz#888c0a1718db3ff866b313070747777380560f69"
 
-graphql-server-core@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/graphql-server-core/-/graphql-server-core-0.5.2.tgz#7e23fc516cb754e42c16f92928b595c354d6c8a7"
-  dependencies:
-    es6-shim "^0.35.3"
+graphql-server-core@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/graphql-server-core/-/graphql-server-core-0.6.0.tgz#468625cba4a00f80275c065432faa481985f5a65"
   optionalDependencies:
     "@types/graphql" "^0.8.5"
 
-graphql-server-express@^0.5.0:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/graphql-server-express/-/graphql-server-express-0.5.2.tgz#c358110ddb2f82939b4d4c9d97ffb5afded7944a"
+graphql-server-express@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/graphql-server-express/-/graphql-server-express-0.6.0.tgz#516090b4add82e6ed2c4a70dd2d925031fdcc289"
   dependencies:
-    graphql-server-core "^0.5.2"
-    graphql-server-module-graphiql "^0.5.2"
+    graphql-server-core "^0.6.0"
+    graphql-server-module-graphiql "^0.6.0"
   optionalDependencies:
     "@types/express" "^4.0.35"
     "@types/graphql" "^0.8.6"
 
-graphql-server-module-graphiql@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/graphql-server-module-graphiql/-/graphql-server-module-graphiql-0.5.2.tgz#7e2a0c78b0267e784f8483ce5633810baf558dee"
+graphql-server-module-graphiql@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/graphql-server-module-graphiql/-/graphql-server-module-graphiql-0.6.0.tgz#e37634b05f000731981e8ed13103f9a5861e5da0"
 
 graphql-tag@^0.1.13:
   version "0.1.17"
@@ -478,9 +472,9 @@ graphql-tag@^1.1.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-1.2.3.tgz#74c62443fbf3e693647426d7359f7e3e6ce7dace"
 
-graphql-tools@^0.9.0:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-0.9.2.tgz#c3f42d0b78d2d6c57cea5ef2894863de34af9a11"
+graphql-tools@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-0.10.0.tgz#9c56c8cc69f319049c02ffe9a0a138df30571761"
   dependencies:
     deprecated-decorator "^0.1.6"
     lodash "^4.3.0"
@@ -488,11 +482,11 @@ graphql-tools@^0.9.0:
   optionalDependencies:
     "@types/graphql" "^0.8.5"
 
-graphql@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.8.2.tgz#eb1bb524b38104bbf2c9157f9abc67db2feba7d2"
+graphql@^0.9.0:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.9.1.tgz#f4d154cbec054d4a5d3b1be95f23435c09aa86c8"
   dependencies:
-    iterall "1.0.2"
+    iterall "1.0.3"
 
 hash.js@^1.0.0:
   version "1.0.3"
@@ -561,16 +555,16 @@ isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
-isomorphic-fetch@^2.1.1:
+isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   dependencies:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
 
-iterall@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.0.2.tgz#41a2e96ce9eda5e61c767ee5dc312373bb046e91"
+iterall@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.0.3.tgz#e0b31958f835013c323ff0b10943829ac69aa4b7"
 
 js-tokens@^3.0.0:
   version "3.0.0"
