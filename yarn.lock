@@ -23,9 +23,9 @@
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.8.6.tgz#b34fb880493ba835b0c067024ee70130d6f9bb68"
 
-"@types/isomorphic-fetch@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.30.tgz#a21717624cde9a48c2db53a4e500fc5c32a99bbc"
+"@types/isomorphic-fetch@0.0.33":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.33.tgz#3ea1b86f8b73e6a7430d01d4dbd5b1f63fd72718"
 
 "@types/mime@*":
   version "0.0.29"
@@ -53,11 +53,25 @@ accepts@~1.3.3:
     mime-types "~2.1.11"
     negotiator "0.6.1"
 
-apollo-client@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-0.8.0.tgz#1bc0164bca0caf22d940e88984b20a82802c7323"
+"apollo-client@^0.9.0 || ^0.10.0":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-0.10.1.tgz#c0c8a18d14ea095a6c8e4e6a7e98c789bdda202b"
   dependencies:
-    graphql-anywhere "^2.0.0"
+    graphql-anywhere "^2.1.0"
+    graphql-tag "^1.3.1"
+    redux "^3.4.0"
+    symbol-observable "^1.0.2"
+    whatwg-fetch "^2.0.0"
+  optionalDependencies:
+    "@types/async" "^2.0.31"
+    "@types/graphql" "^0.8.0"
+    "@types/isomorphic-fetch" "0.0.33"
+
+apollo-client@next:
+  version "1.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-1.0.0-rc.0.tgz#46532af9d6b26a6ac34a594800d34ab7e3ddd3b6"
+  dependencies:
+    graphql-anywhere "^2.1.0"
     graphql-tag "^1.1.1"
     redux "^3.4.0"
     symbol-observable "^1.0.2"
@@ -65,7 +79,7 @@ apollo-client@^0.8.0:
   optionalDependencies:
     "@types/async" "^2.0.31"
     "@types/graphql" "^0.8.0"
-    "@types/isomorphic-fetch" "0.0.30"
+    "@types/isomorphic-fetch" "0.0.33"
 
 array-flatten@1.1.1:
   version "1.1.1"
@@ -440,7 +454,7 @@ fresh@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.3.0.tgz#651f838e22424e7566de161d8358caa199f83d4f"
 
-graphql-anywhere@^2.0.0:
+graphql-anywhere@^2.0.0, graphql-anywhere@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-2.1.0.tgz#888c0a1718db3ff866b313070747777380560f69"
 
@@ -464,17 +478,13 @@ graphql-server-module-graphiql@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/graphql-server-module-graphiql/-/graphql-server-module-graphiql-0.6.0.tgz#e37634b05f000731981e8ed13103f9a5861e5da0"
 
-graphql-tag@^0.1.13:
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-0.1.17.tgz#1dfd6f2310d395b309a1077bc8cdc5d6604c5e89"
+graphql-tag@^1.1.1, graphql-tag@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-1.3.1.tgz#16cdf13635f10bbc968c6f2c6265ffe883a906da"
 
-graphql-tag@^1.1.1:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-1.2.3.tgz#74c62443fbf3e693647426d7359f7e3e6ce7dace"
-
-graphql-tools@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-0.10.0.tgz#9c56c8cc69f319049c02ffe9a0a138df30571761"
+graphql-tools@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-0.10.1.tgz#274aa338d50b1c0b3ed6936eafd8ed3a19ed1828"
   dependencies:
     deprecated-decorator "^0.1.6"
     lodash "^4.3.0"
@@ -836,11 +846,13 @@ react-addons-pure-render-mixin@^15.3.1:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-apollo@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-0.9.0.tgz#a95d05ccf2f92b16a21fd41795e2876c9ea28d6e"
+react-apollo@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-0.13.2.tgz#d380e852375e3519fe728416dd8e3a1e3d419649"
   dependencies:
+    apollo-client "^0.9.0 || ^0.10.0"
     graphql-anywhere "^2.0.0"
+    graphql-tag "^1.3.1"
     hoist-non-react-statics "^1.2.0"
     invariant "^2.2.1"
     lodash.flatten "^4.2.0"
