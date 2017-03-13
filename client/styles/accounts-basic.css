@@ -2,12 +2,6 @@
  * Styles adapted from https://github.com/studiointeract/accounts-basic
  */
 
-.accounts-ui {
-  padding: 16px;
-  background: white;
-  margin: 16px;
-  max-width: 500px;
-}
 .accounts-ui .field-group {
   padding-bottom: 16px;
 }
@@ -30,6 +24,7 @@
   padding: 8px 16px;
   background: white;
   border: solid 1px #ccc;
+  margin: 5px 0;
 }
 .accounts-ui a {
   display: inline-block;
@@ -50,19 +45,7 @@
   width: 100%;
   box-sizing: border-box;
 }
-.accounts-ui button {
-  background: #999;
-  outline: none;
-  color: #FFF;
-  margin-right: 8px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: none;
-  padding: 16px 24px;
-  font-size: 14px;
-  line-height: 16px;
-  cursor: pointer;
-}
+
 .accounts-ui button[type="submit"] {
   background: #de4f4f;
 }
@@ -75,12 +58,7 @@
 .accounts-ui button[disabled] {
   opacity: 0.5;
 }
-.accounts-ui button:focus, .accounts-ui button:hover {
-  background-color: #a6a6a6;
-}
-.accounts-ui button:active {
-  background-color: #8c8c8c;
-}
+
 .accounts-ui .message {
   padding: 16px;
   background: #eee;

@@ -2,26 +2,43 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
+import Header from './Header';
+import Loading from './Loading';
 import LoginForm from './LoginForm';
 
-const App = ({ currentUser, refetch }) => (
-  <div>
-    <LoginForm />
+const App = ({ currentUser, refetch, userLoading }) => (
+  <div className="App">
 
-    {currentUser
-      ? <div>
-          <pre>{JSON.stringify(currentUser, null, 2)}</pre>
-          <button onClick={() => refetch()}>Refetch!</button>
-        </div>
-      : 'Please log in!'}
+    <Header />
+
+    <div className="App-block">
+      {userLoading
+        ? <Loading />
+        : <div className="App-content">
+            <LoginForm />
+            {currentUser
+              ? <div>
+                  <pre>{JSON.stringify(currentUser, null, 2)}</pre>
+                  <button onClick={() => refetch()}>Refetch the query!</button>
+                </div>
+              : 'Please log in!'}
+          </div>}
+    </div>
+
   </div>
 );
 
 App.propTypes = {
   currentUser: React.PropTypes.object,
+  hasErrors: React.PropTypes.bool,
   refetch: React.PropTypes.func,
+  userLoading: React.PropTypes.bool,
 };
 
+/*
+ * We use `gql` from graphql-tag to parse GraphQL query strings into the standard GraphQL AST
+ * See for more information: https://github.com/apollographql/graphql-tag
+ */
 const GET_USER_DATA = gql`
   query getCurrentUser {
     user {
@@ -35,11 +52,14 @@ const GET_USER_DATA = gql`
   }
 `;
 
+/*
+ * We use the `graphql` higher order component to send the graphql query to our server
+ * See for more information: http://dev.apollodata.com/react/
+ */
 const withData = graphql(GET_USER_DATA, {
+  // destructure the default props to more explicit ones
   props: ({ data: { error, loading, user, refetch } }) => {
-    // xxx: display loading
     if (loading) return { userLoading: true };
-    // xxx: display errors
     if (error) return { hasErrors: true };
 
     return {
@@ -47,10 +67,6 @@ const withData = graphql(GET_USER_DATA, {
       refetch,
     };
   },
-  // xxx: show example
-  // options: (ownProps) => (
-  //   { variables: { id: ownProps.userId } }
-  // ),
 });
 
 export default withData(App);

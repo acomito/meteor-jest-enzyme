@@ -14,7 +14,6 @@ Accounts.ui.config({
  */
 const LoginForm = props => (
   <Accounts.ui.LoginForm
-    visible
     onSignedInHook={() => props.client.resetStore()}
     onSignedOutHook={() => props.client.resetStore()}
     onPostSignUpHook={() => props.client.resetStore()}
