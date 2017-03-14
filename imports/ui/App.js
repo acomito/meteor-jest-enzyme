@@ -1,67 +1,72 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { graphql } from 'react-apollo';
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
-import { LoginButtons } from 'meteor/okgrow:accounts-ui-react';
 import gql from 'graphql-tag';
 
-Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_ONLY'
-});
+import Header from './Header';
+import Loading from './Loading';
+import LoginForm from './LoginForm';
 
-const App = ({ userId, currentUser, refetch }) => (
-  <div>
-    <LoginButtons visible />
-    {userId ? (
-      <div>
-        <pre>{JSON.stringify(currentUser, null, 2)}</pre>
-        <button onClick={() => refetch()}>Refetch!</button>
-      </div>
-    ) : 'Please log in!'}
+const App = ({ currentUser, refetch, userLoading }) => (
+  <div className="App">
+
+    <Header />
+
+    <div className="App-block">
+      {userLoading
+        ? <Loading />
+        : <div className="App-content">
+            <LoginForm />
+            {currentUser
+              ? <div>
+                  <pre>{JSON.stringify(currentUser, null, 2)}</pre>
+                  <button onClick={() => refetch()}>Refetch the query!</button>
+                </div>
+              : 'Please log in!'}
+          </div>}
+    </div>
+
   </div>
 );
 
 App.propTypes = {
-  userId: React.PropTypes.string.isRequired,
   currentUser: React.PropTypes.object,
+  hasErrors: React.PropTypes.bool,
   refetch: React.PropTypes.func,
+  userLoading: React.PropTypes.bool,
 };
 
+/*
+ * We use `gql` from graphql-tag to parse GraphQL query strings into the standard GraphQL AST
+ * See for more information: https://github.com/apollographql/graphql-tag
+ */
 const GET_USER_DATA = gql`
-  query ($id: String!) {
-    user(id: $id) {
+  query getCurrentUser {
+    user {
       emails {
         address
         verified
       }
-      username
       randomString
       _id
     }
   }
 `;
 
+/*
+ * We use the `graphql` higher order component to send the graphql query to our server
+ * See for more information: http://dev.apollodata.com/react/
+ */
 const withData = graphql(GET_USER_DATA, {
+  // destructure the default props to more explicit ones
   props: ({ data: { error, loading, user, refetch } }) => {
     if (loading) return { userLoading: true };
     if (error) return { hasErrors: true };
+
     return {
       currentUser: user,
       refetch,
     };
   },
-  options: (ownProps) => (
-    { variables: { id: ownProps.userId } }
-  ),
 });
 
-const AppWithData = withData(App);
-
-// This container brings in Tracker-enabled Meteor data
-const AppWithUserId = createContainer(() => {
-  return {
-    userId: Meteor.userId() || '',
-  };
-}, AppWithData);
-
-export default AppWithUserId;
+export default withData(App);

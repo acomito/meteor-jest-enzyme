@@ -11,7 +11,10 @@ import App from '/imports/ui/App';
 const client = new ApolloClient(meteorClientConfig());
 
 Meteor.startup(() => {
-  render(<ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>, document.getElementById('app'));
+  render(
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>,
+    document.getElementById('app')
+  );
 });
