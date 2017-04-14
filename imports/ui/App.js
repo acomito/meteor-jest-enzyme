@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -29,10 +30,10 @@ const App = ({ currentUser, refetch, userLoading }) => (
 );
 
 App.propTypes = {
-  currentUser: React.PropTypes.object,
-  hasErrors: React.PropTypes.bool,
-  refetch: React.PropTypes.func,
-  userLoading: React.PropTypes.bool,
+  currentUser: PropTypes.object,
+  hasErrors: PropTypes.bool,
+  refetch: PropTypes.func,
+  userLoading: PropTypes.bool,
 };
 
 /*
