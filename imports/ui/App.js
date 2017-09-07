@@ -7,7 +7,7 @@ import Header from './Header';
 import Loading from './Loading';
 import LoginForm from './LoginForm';
 
-const App = ({ currentUser, refetch, userLoading }) => (
+export const App = ({ currentUser, refetch, userLoading }) => (
   <div className="App">
 
     <Header />
